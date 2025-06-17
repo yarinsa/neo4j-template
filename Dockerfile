@@ -115,7 +115,7 @@ ENV NEO4J_AUTH=neo4j/${DB_PASSWORD}
 ENV NEO4J_server_memory_pagecache_size=256m
 ENV NEO4J_server_memory_heap_max__size=512m
 
-RUN echo "NEO4J_AUTH=${DB_PASSWORD}"
+RUN echo "NEO4J_AUTH=neo4j/${DB_PASSWORD}"
 
 # Use the preloaded database from the import stage
 COPY --from=neo4j-import /data /data
