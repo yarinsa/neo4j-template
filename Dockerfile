@@ -7,8 +7,7 @@ ARG RELATION_CSV_URLS=""
 
 ENV NODE_CSV_URLS=${NODE_CSV_URLS}
 ENV RELATION_CSV_URLS=${RELATION_CSV_URLS}
-ENV NEO4J_server_memory_pagecache_size=256m
-ENV NEO4J_server_memory_heap_max__size=512m
+
 
 # Create necessary directories for Neo4j
 RUN mkdir -p /data /import
@@ -113,6 +112,8 @@ ARG DB_PASSWORD=""
 
 # Set environment variables
 ENV NEO4J_AUTH=neo4j/${DB_PASSWORD}
+ENV NEO4J_server_memory_pagecache_size=256m
+ENV NEO4J_server_memory_heap_max__size=512m
 
 RUN echo "NEO4J_AUTH=${DB_PASSWORD}"
 
